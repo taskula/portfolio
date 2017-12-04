@@ -36,4 +36,4 @@ hypnotoad ./taskula.pl
 
 ## License
 
-Ssee the [LICENSE.md](LICENSE.md) file for details
+See the [LICENSE.md](LICENSE.md) file for details

@@ -30,6 +30,7 @@ get '/' => sub {
         description => $taskula->welcome($c->tx->remote_address),
         links => $taskula->links,
         version => $Taskula::VERSION,
+        source => 'https://github.com/taskula/portfolio',
     };
 
      $c->render( status => 200, json => $content );

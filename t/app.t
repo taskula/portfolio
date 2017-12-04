@@ -25,11 +25,12 @@ require "$FindBin::Bin/../taskula.pl";
 my $t = Test::Mojo->new;
 
 subtest 'GET / tests' => sub {
-    plan tests => 5;
+    plan tests => 6;
 
     $t->get_ok('/')
      ->status_is(200)
      ->json_has('/description')
      ->json_has('/links')
-     ->json_is('/version', $Taskula::VERSION);
+     ->json_is('/version', $Taskula::VERSION)
+     ->json_is('/source', 'https://github.com/taskula/portfolio');
 };

@@ -27,8 +27,10 @@ get '/' => sub {
 
     my $taskula = Taskula->new;
     my $content = {
+        cv => $taskula->cv,
         description => $taskula->welcome($c->tx->remote_address),
         links => $taskula->links,
+        name => $taskula->name,
         version => $Taskula::VERSION,
         source => 'https://github.com/taskula/portfolio',
     };

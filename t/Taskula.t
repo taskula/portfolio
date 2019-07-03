@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 
-use Test::More tests => 3;
+use Test::More tests => 5;
 
 use Taskula;
 
@@ -25,6 +25,16 @@ subtest 'new() tests' => sub {
 
     ok(Taskula->can('new'), 'Method new() is available.');
     is(ref(Taskula->new), 'Taskula', 'new() returns an instance of Taskula.');
+};
+
+subtest 'cv() tests' => sub {
+    plan tests => 2;
+
+    ok(Taskula->can('cv'), 'Method cv() is available.');
+
+    my $cv = Taskula->new->cv;
+
+    like($cv, qr/LinkedIn/, 'cv() points to LinkedIn.');
 };
 
 subtest 'links() tests' => sub {
@@ -38,6 +48,16 @@ subtest 'links() tests' => sub {
     ok($links->{github}, 'Contains a link to GitHub.');
     ok($links->{linkedin}, 'Contains a link to LinkedIn.');
     ok($links->{telegram}, 'Contains a link to Telegram.');
+};
+
+subtest 'name() tests' => sub {
+    plan tests => 2;
+
+    ok(Taskula->can('name'), 'Method name() is available.');
+
+    my $name = Taskula->new->name;
+
+    is($name, 'Lari Taskula', 'name() returns correct name.');
 };
 
 subtest 'welcome() tests' => sub {

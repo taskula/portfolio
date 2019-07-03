@@ -44,6 +44,24 @@ sub new {
     return bless {}, $class;
 }
 
+=head3 cv
+
+$taskula->cv();
+
+Returns my CV.
+
+=cut
+
+sub cv {
+    my ($self, $name) = @_;
+
+    my $linkedin = $self->links->{linkedin};
+    my $cv = "My information on education, employment and skills can be found"
+            ." from LinkedIn. Please navigate to $linkedin";
+
+    return $cv;
+}
+
 =head3 links
 
 $taskula->links;
@@ -61,6 +79,18 @@ sub links {
         linkedin => 'https://www.linkedin.com/in/lari-taskula-6a9756148/',
         telegram => 'https://t.me/taskula'
     };
+}
+
+=head3 name
+
+$taskula->name;
+
+Returns my name.
+
+=cut
+
+sub name {
+    return 'Lari Taskula';
 }
 
 =head3 welcome

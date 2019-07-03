@@ -16,7 +16,7 @@
 # along with this program; if not, write to the Free Software Foundation,
 # Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 
-use Test::More tests => 5;
+use Test::More tests => 6;
 
 use Taskula;
 
@@ -25,6 +25,18 @@ subtest 'new() tests' => sub {
 
     ok(Taskula->can('new'), 'Method new() is available.');
     is(ref(Taskula->new), 'Taskula', 'new() returns an instance of Taskula.');
+};
+
+subtest 'business() tests' => sub {
+    plan tests => 3;
+
+    ok(Taskula->can('business'), 'Method business() is available.');
+
+    my $business = Taskula->new->business;
+
+    is(ref($business), 'HASH', 'business() returns a HASHref.');
+    is($business->{hypernova}, 'https://www.hypernova.fi',
+        'Contains Hypernova\'s website address.');
 };
 
 subtest 'cv() tests' => sub {

@@ -44,6 +44,22 @@ sub new {
     return bless {}, $class;
 }
 
+=head3 business
+
+$taskula->business();
+
+Returns my businesses.
+
+=cut
+
+sub business {
+    my ($self, $name) = @_;
+
+    return {
+        hypernova => 'https://www.hypernova.fi'
+    };
+}
+
 =head3 cv
 
 $taskula->cv();

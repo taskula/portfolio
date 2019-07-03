@@ -27,6 +27,7 @@ get '/' => sub {
 
     my $taskula = Taskula->new;
     my $content = {
+        business => $taskula->business,
         cv => $taskula->cv,
         description => $taskula->welcome($c->tx->remote_address),
         links => $taskula->links,

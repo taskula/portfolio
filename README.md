@@ -2,8 +2,6 @@
 
 This is a tiny Mojolicious::Lite application for my portfolio.
 
-A live version of this application can be seen running at https://lari.taskula.fi.
-
 ### Prerequisites
 
 ```
